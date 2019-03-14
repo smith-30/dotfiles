@@ -25,7 +25,7 @@ cd && \
 touch .bash_profile && \
 mkdir .ssh && \
 chmod 700 ~/.ssh && \
-ssh-keygen -t rsa -b 4096 -C "misu@example.com" -f ~/.ssh/id_rsa && \
+ssh-keygen -t rsa -b 4096 -C "smith-30@example.com" -f ~/.ssh/id_rsa && \
 chmod 400 ~/.ssh/id_rsa
 ```
 
