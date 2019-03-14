@@ -1,6 +1,10 @@
-# nodebrew
+export PATH=/usr/local:$PATH
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/Users/smith-30/go/bin
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-nodebrew use v6.2.0
+
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
 
 # git support (git-completion, git-prompt)
 source ~/.git-completion.bash
@@ -21,8 +25,7 @@ alias di='docker images'
 function de() {
     docker exec -it $1 bash
 }
-#---------- docker alias¬
-
+#---------- docker alias
 
 # Git---------- git alias
 
@@ -42,31 +45,60 @@ alias gpull='git branch --contains=HEAD | sed 's/*//' | xargs -n 1 -p git pull o
 
 #Git ---------- git alias
 
-# AWS
-function bucket_dl() {
-    aws s3 cp --region ap-northeast-1 "s3://$1/" . --recursive
+# peco --------
+export HISTCONTROL="ignoredups"
+peco-history() {
+  local NUM=$(history | wc -l)
+  local FIRST=$((-1*(NUM-1)))
+
+  if [ $FIRST -eq 0 ] ; then
+    history -d $((HISTCMD-1))
+    echo "No history" >&2
+    return
+  fi
+  local CMD=$(fc -l $FIRST | sort -k 2 -k 1nr | uniq -f 1 | sort -nr | sed -E 's/^[0-9]+[[:blank:]]+//' | peco | head -n 1)
+  if [ -n "$CMD" ] ; then
+    history -s $CMD
+    if type osascript > /dev/null 2>&1 ; then
+      (osascript -e 'tell application "System Events" to keystroke (ASCII character 30)' &)
+    fi
+
+    # Uncomment below to execute it here directly
+    echo $CMD >&2
+    eval $CMD
+  else
+    history -d $((HISTCMD-1))
+  fi
 }
+bind -x '"\C-h": peco-history'
 
-#Util
-function searchText() {
-    find ./ -type f -print | xargs grep "$1"
+peco-kill(){
+  local PROC=`ps aux | peco`
+  local PID=`echo "$PROC" | awk '{print $2}'`
+  if [ -n "$PID" ];then
+    echo "kill pid:$PID. [$PROC]"
+    kill $PID
+  fi
 }
+bind -x '"\C-k":peco-kill'
 
-# {{{
-# Node Completion - Auto-generated, do not touch.
-shopt -s progcomp
-for f in $(command ls ~/.node-completion); do
-  f="$HOME/.node-completion/$f"
-  test -f "$f" && . "$f"
-done
-# }}}
+function peco-cd {
+    cd $(ghq list -p | peco)
+}
+alias sd='peco-cd'
 
-# phpenv
-export PATH="/Users/xxx/.phpenv/bin:$PATH"
-eval "$(phpenv init -)"
-export PATH="/usr/local/opt/bison@2.7/bin:$PATH"
+# !peco --------
 
-# Composer
-export PATH="$PATH:$HOME/.composer/vendor/bin"
-source ~/.enhancd/init.sh
+# enhancd
+source /path/to/enhancd/init.sh
 
+# alias
+alias reload_ssh='eval `ssh-agent` && ssh-add ~/.ssh/id_rsa'
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+export PATH
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
