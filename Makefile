@@ -9,3 +9,5 @@ setup:
 	git config --global ghq.root ~/go/src
 	cd && git clone git@github.com:b4b4r07/enhancd.git
 	source ~/.bash_profile
+	nvm install --lts
+	curl https://sh.rustup.rs -sSf | sh
