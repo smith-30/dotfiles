@@ -16,6 +16,8 @@ brew cask install slack && \
 brew cask install karabiner-elements && \
 brew cask install skitch && \
 brew install git go ffmpeg graphviz plantuml peco fd jq nvm
+git config --global user.name "smith-30"
+git config --global user.email smith-30@example.com
 ```
 
 ```
