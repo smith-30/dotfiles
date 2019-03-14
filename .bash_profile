@@ -90,7 +90,7 @@ alias sd='peco-cd'
 # !peco --------
 
 # enhancd
-source /path/to/enhancd/init.sh
+source ~/enhancd/init.sh
 
 # alias
 alias reload_ssh='eval `ssh-agent` && ssh-add ~/.ssh/id_rsa'
