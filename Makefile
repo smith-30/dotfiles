@@ -11,3 +11,5 @@ setup:
 	source ~/.bash_profile
 	nvm install --lts
 	curl https://sh.rustup.rs -sSf | sh
+	apm install sync-settings
+	code --install-extension shan.code-settings-sync #事前に Shift + Command + p の shellのパス通す
