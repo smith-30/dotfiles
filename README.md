@@ -5,6 +5,7 @@
 ```bash
 xcode-select --install && \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  && \
+brew install awscli && \
 brew install caskroom/cask/brew-cask && \
 brew cask install google-chrome && \
 brew cask install  firefox && \
@@ -15,6 +16,8 @@ brew cask install google-japanese-ime && \
 brew cask install slack && \
 brew cask install karabiner-elements && \
 brew cask install skitch && \
+brew cask install virtualbox && \
+brew cask install vagrant && \
 brew install git go ffmpeg graphviz plantuml peco fd jq nvm bzr mkcert && \
 git config --global user.name "smith-30" && \
 git config --global user.email smith-30@example.com
