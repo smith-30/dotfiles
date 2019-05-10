@@ -3,6 +3,9 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:/Users/smith-30/go/bin
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
+# direnv
+eval "$(direnv hook bash)"
+
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
