@@ -7,7 +7,7 @@ xcode-select --install && \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  && \
 brew tap homebrew/cask-versions && \
 brew cask install adoptopenjdk8 && \
-brew install awscli swagger-codegen && \
+brew install terraform awscli swagger-codegen && \
 brew install caskroom/cask/brew-cask && \
 brew cask install google-chrome && \
 brew cask install  firefox && \
