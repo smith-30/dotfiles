@@ -5,6 +5,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # direnv
 eval "$(direnv hook bash)"
+export EDITOR=vim
 
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
