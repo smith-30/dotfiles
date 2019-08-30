@@ -106,3 +106,6 @@ export PATH
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# direnv
+eval "$(direnv hook bash)"
