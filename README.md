@@ -19,7 +19,7 @@ brew cask install karabiner-elements && \
 brew cask install skitch && \
 brew cask install virtualbox && \
 brew cask install vagrant && \
-brew install git go ffmpeg graphviz plantuml peco fd jq nvm bzr mkcert tfenv awscli swagger-codegen direnv wget ghq && \
+brew install jq git go ffmpeg graphviz plantuml peco fd jq nvm bzr mkcert tfenv awscli swagger-codegen direnv wget ghq && \
 git config --global user.name "smith-30" && \
 git config --global user.email smith-30@example.com
 ```
