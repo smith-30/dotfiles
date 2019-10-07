@@ -42,3 +42,7 @@ git clone git@github.com:smith-30/dotfiles.git && \
 cd dotfiles && \
 make setup
 ```
+
+## misc
+
+[vscode changelog](https://github.com/axetroy/vscode-changelog-generator)
