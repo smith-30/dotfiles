@@ -48,3 +48,5 @@ make setup
 [vscode changelog](https://github.com/axetroy/vscode-changelog-generator)
 
 ## CHANGELOG
+
+[CHANGELOG](./CHANGELOG.md)
