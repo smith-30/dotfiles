@@ -107,6 +107,5 @@ export PATH
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
-function gce() {
-    git commit --allow-empty -m "resolve $1"
-}
+# direnv
+eval "$(direnv hook bash)"
