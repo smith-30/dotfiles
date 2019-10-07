@@ -3,6 +3,7 @@
 setup:
 	cp .bash_profile ~/.bash_profile
 	cp .czrc ~/.czrc
+	cp .cz-config.js ~/.cz-config.js
 	cp .git-completion.bash ~/.git-completion.bash
 	cp .git-prompt.sh ~/.git-prompt.sh
 	cp .vimrc ~/.vimrc
