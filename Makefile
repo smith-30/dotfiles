@@ -2,6 +2,7 @@
 
 setup:
 	cp .bash_profile ~/.bash_profile
+	cp .czrc ~/.czrc
 	cp .git-completion.bash ~/.git-completion.bash
 	cp .git-prompt.sh ~/.git-prompt.sh
 	cp .vimrc ~/.vimrc
@@ -13,4 +14,4 @@ setup:
 	curl https://sh.rustup.rs -sSf | sh
 	apm install sync-settings
 	code --install-extension shan.code-settings-sync #事前に Shift + Command + p の shellのパス通す
-	npm install -g commitizen 
+	npm install -g commitizen cz-conventional-changelog cz-customizable
