@@ -46,3 +46,5 @@ make setup
 ## misc
 
 [vscode changelog](https://github.com/axetroy/vscode-changelog-generator)
+
+## CHANGELOG
