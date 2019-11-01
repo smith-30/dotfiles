@@ -45,6 +45,8 @@ cd dotfiles && \
 make setup
 ```
 
+vscode の go のライブラリインストールをvscodeで実行する
+
 ## misc
 
 [vscode changelog](https://github.com/axetroy/vscode-changelog-generator)
