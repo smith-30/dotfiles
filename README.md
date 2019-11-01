@@ -20,6 +20,7 @@ brew cask install skitch && \
 brew cask install virtualbox && \
 brew cask install vagrant && \
 brew cask install stoplight-studio && \
+brew cask install postman && \
 brew install git go ffmpeg graphviz plantuml peco fd jq nvm bzr mkcert tfenv awscli swagger-codegen direnv tmux wget ghq git-secrets　&& \
 git config --global user.name "smith-30" && \
 git config --global user.email smith-30@example.com && \
