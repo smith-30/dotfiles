@@ -12,8 +12,12 @@ export NVM_DIR="$HOME/.nvm"
 
 # git support (git-completion, git-prompt)
 source ~/.git-completion.bash
-export PS1='\[\e[1;34m\]▶︎ \[\e[00m\][ @ \w\[\e[1;32m\]\[$(__git_ps1 " (%s)")\[\e[00m\]] $ '
 source ~/.git-prompt.sh
+
+GIT_PS1_SHOWDIRTYSTATE=false
+
+# プロンプトで表示する内容
+export PS1='▶︎ \W \[\033[32m\]$(__git_ps1)\[\033[00m\]\n\$ '
 
 # some more ls aliases
 alias ll='ls -alF'
