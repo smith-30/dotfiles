@@ -5,6 +5,7 @@ tap "git-chglog/git-chglog"
 tap "homebrew/bundle"
 tap "homebrew/cask-versions"
 tap "sqldef/sqldef"
+brew 'mas'
 brew "automake"
 brew "python@3.11"
 brew "awscli", link: false
@@ -72,7 +73,6 @@ brew "bufbuild/buf/buf"
 brew "clojure/tools/clojure"
 brew "git-chglog/git-chglog/git-chglog"
 cask "adoptopenjdk"
-cask "adoptopenjdk8"
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "karabiner-elements"
@@ -90,3 +90,10 @@ cask 'visual-studio-code'
 cask 'asana'
 cask 'deepl'
 cask 'figma'
+cask 'rectangle'
+cask 'discord'
+cask 'orbstack'
+
+mas 'Xcode', id: 497799835
+mas 'Kindle', id: 302584613
+mas 'Tailscale', id: 1475387142
