@@ -61,3 +61,16 @@ vscode の go のライブラリインストールをvscodeで実行する
 ## CHANGELOG
 
 [CHANGELOG](./CHANGELOG.md)
+
+## brew 周り
+
+```
+# Brewfile作成
+brew bundle dump
+
+# 定期アップデート
+$ brew bundle dump -f
+
+# 編集反映
+brew bundle cleanup
+```
