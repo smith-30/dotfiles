@@ -3,6 +3,7 @@
 ## init
 
 - brew 入れる
+  - https://brew.sh/
 - brewfile　コピペ
 - brew install
 - .zshrcコピペ
