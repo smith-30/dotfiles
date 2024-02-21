@@ -13,22 +13,22 @@
 - make setup
 
 ```bash
-xcode-select --install && \
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  && \
-brew tap homebrew/cask-versions && \
-brew install caskroom/cask/brew-cask && \
-brew cask install adoptopenjdk8 && \
-brew cask install google-chrome && \
-brew cask install visual-studio-code && \
-brew cask install java  && \
-brew cask install google-japanese-ime && \
-brew cask install slack && \
-brew cask install karabiner-elements && \
-brew cask install skitch && \
-brew cask install stoplight-studio && \
-brew cask install postman && \
-brew install dep docker docker-compose git go ffmpeg graphviz plantuml peco fd jq bzr mkcert tfenv awscli swagger-codegen direnv tmux wget ghq git-secrets　&& \
-brew install lazydocker && \
+# xcode-select --install && \
+# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  && \
+# brew tap homebrew/cask-versions && \
+# brew install caskroom/cask/brew-cask && \
+# brew cask install adoptopenjdk8 && \
+# brew cask install google-chrome && \
+# brew cask install visual-studio-code && \
+# brew cask install java  && \
+# brew cask install google-japanese-ime && \
+# brew cask install slack && \
+# brew cask install karabiner-elements && \
+# brew cask install skitch && \
+# brew cask install stoplight-studio && \
+# brew cask install postman && \
+# brew install dep docker docker-compose git go ffmpeg graphviz plantuml peco fd jq bzr mkcert tfenv awscli swagger-codegen direnv tmux wget ghq git-secrets　&& \
+# brew install lazydocker && \
 git config --global user.name "smith-30" && \
 git config --global user.email smith-30@example.com && \
 git secrets --install ~/.git-templates/git-secrets && \
