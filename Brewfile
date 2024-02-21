@@ -82,4 +82,11 @@ cask "postman"
 cask "skitch"
 cask "slack"
 cask "stoplight-studio"
-cask "visual-studio-code"
+cask 'istat-menus'
+cask 'zoom'
+cask 'obsidian'
+cask 'drawio'
+cask 'visual-studio-code'
+cask 'asana'
+cask 'deepl'
+cask 'figma'
