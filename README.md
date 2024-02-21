@@ -2,6 +2,15 @@
 
 ## init
 
+- brew 入れる
+- brewfile　コピペ
+- brew install
+- .zshrcコピペ
+- git設定
+- git clone git@github.com:smith-30/dotfiles.git
+- cd dotfiles
+- make setup
+
 ```bash
 xcode-select --install && \
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"  && \
