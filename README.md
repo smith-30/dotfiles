@@ -44,6 +44,14 @@ ssh-keygen -t rsa -b 4096 -C "smith-30@example.com" -f ~/.ssh/my-github-id_rsa &
 chmod 400 ~/.ssh/my-github-id_rsa
 ```
 
+```
+$ vi ~/.ssh/config
+Host github github.com
+    HostName github.com
+    IdentityFile ~/.ssh/my-github-id_rsa
+    User git
+```
+
 ```bash
 mkdir ~/Project && \
 cd ~/Project && \
