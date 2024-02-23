@@ -72,13 +72,17 @@ vscode の go のライブラリインストールをvscodeで実行する
 
 ## brew 周り
 
-```
+```bash
 # Brewfile作成
-brew bundle dump
+$ brew bundle dump
 
 # 定期アップデート
-$ brew bundle dump -f
+$ brew update
+$ brew upgrade
 
 # 編集反映
-brew bundle cleanup
+$ brew bundle cleanup
+
+# 削除
+$ brew uninstall vim
 ```

@@ -5,6 +5,7 @@ tap "git-chglog/git-chglog"
 tap "homebrew/bundle"
 tap "homebrew/cask-versions"
 tap "sqldef/sqldef"
+brew 'openssl'
 brew 'mas'
 brew "automake"
 brew "python@3.11"
