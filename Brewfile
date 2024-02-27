@@ -73,6 +73,8 @@ brew "aquasecurity/trivy/trivy"
 brew "bufbuild/buf/buf"
 brew "clojure/tools/clojure"
 brew "git-chglog/git-chglog/git-chglog"
+brew "leiningen"
+
 cask "adoptopenjdk"
 cask "google-chrome"
 cask "google-japanese-ime"
