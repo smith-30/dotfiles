@@ -96,6 +96,7 @@ cask 'figma'
 cask 'rectangle'
 cask 'discord'
 cask 'orbstack'
+cask 'tomatobar'
 
 mas 'Xcode', id: 497799835
 mas 'Kindle', id: 302584613
