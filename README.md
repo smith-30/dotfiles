@@ -4,9 +4,9 @@
 
 - brew 入れる
   - https://brew.sh/
-- brewfile　コピペ
+- set brewfile
 - brew bundle
-- .zshrcコピペ
+- set .zshrc
 - git設定
 - git clone git@github.com:smith-30/dotfiles.git
 - cd dotfiles
