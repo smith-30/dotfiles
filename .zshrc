@@ -65,3 +65,5 @@ alias gpull='git branch --contains=HEAD | sed "s/*//" | xargs -n 1 -p git pull o
 
 # enhancd
 source ~/enhancd/init.sh
+export ENHANCD_FILTER=sk
+eval "$(zoxide init zsh)"

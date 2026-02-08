@@ -8,7 +8,6 @@ tap "sqldef/sqldef"
 brew 'openssl'
 brew 'mas'
 brew "automake"
-brew "python@3.11"
 brew "awscli", link: false
 brew "bazaar"
 brew "glib"
@@ -48,7 +47,7 @@ brew "meilisearch"
 brew "mkcert"
 brew "mysql-client"
 brew "mydumper"
-brew "mysql@5.7"
+brew "mysql"
 brew "nghttp2"
 brew "nvm"
 brew "plantuml"
@@ -66,6 +65,15 @@ brew "aquasecurity/trivy/trivy"
 brew "clojure/tools/clojure"
 brew "git-chglog/git-chglog/git-chglog"
 brew "leiningen"
+brew "lazygit"        # Git操作をTUIで快適にする
+brew "lazydocker"    # Docker / docker-compose をTUIで操作
+brew "lazynpm"       # npm/yarn/pnpm のスクリプト・依存をTUIで管理
+brew "tmuxp"         # tmux セッションをYAMLで定義・自動起動
+brew "ghostty"       # 高速・GPU描画対応の次世代ターミナル
+brew "sk"            # skim: fzf互換の高速ファジーファインダ
+brew "fzf"           # ファジーファインダ（定番）
+brew "zoxide"        # cd を賢くするディレクトリジャンプツール
+brew "csvlens"       # CSVをTUIで可視化・閲覧
 
 cask "adoptopenjdk"
 cask "google-chrome"
