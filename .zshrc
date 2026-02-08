@@ -1,4 +1,3 @@
-
 # 補完機能を有効にする
 autoload -Uz compinit
 compinit
@@ -67,3 +66,23 @@ alias gpull='git branch --contains=HEAD | sed "s/*//" | xargs -n 1 -p git pull o
 source ~/enhancd/init.sh
 export ENHANCD_FILTER=sk
 eval "$(zoxide init zsh)"
+
+## history
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=1000000
+SAVEHIST=1000000
+
+## share .zsh-history
+setopt inc_append_history
+setopt share_history
+export HISTCONTROL=ignoreboth    # ignoredupsとignorespaceどちらも設定する
+export HISTIGNORE=history     # historyは記録しない。
+
+# fzf history
+function fzf-select-history() {
+    BUFFER=$(history -n -r 1 | fzf --query "$LBUFFER" --reverse)
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N fzf-select-history
+bindkey '^r' fzf-select-history
