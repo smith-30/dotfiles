@@ -86,3 +86,28 @@ function fzf-select-history() {
 }
 zle -N fzf-select-history
 bindkey '^r' fzf-select-history
+
+setopt rm_star_wait         # rm * の前に確認
+setopt extended_glob        # 高機能glob有効化
+
+fkill() {
+  local pid
+  pid=$(
+    ps -u "$USER" -o pid,%cpu,%mem,etime,command | sed 1d |
+      fzf --multi --height=50% --border \
+          --prompt='kill> ' \
+          --header='PID  CPU MEM  TIME   COMMAND' \
+          --preview 'ps -p {1} -o pid,ppid,%cpu,%mem,etime,command' |
+      awk '{print $1}'
+  )
+
+  [[ -n "$pid" ]] && kill $pid
+}
+
+# Ctrl + k でプロセス Kill
+zle -N fkill-widget
+fkill-widget() {
+  fkill
+  zle reset-prompt
+}
+bindkey '^K' fkill-widget
