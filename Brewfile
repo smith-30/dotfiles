@@ -74,6 +74,9 @@ brew "sk"            # skim: fzf互換の高速ファジーファインダ
 brew "fzf"           # ファジーファインダ（定番）
 brew "zoxide"        # cd を賢くするディレクトリジャンプツール
 brew "csvlens"       # CSVをTUIで可視化・閲覧
+brew "tailscale"     # インターネット越しに、どこでも安全に“自分のLAN”を作るツール
+brew "mise"          # 開発言語やツールのバージョン管理をまとめてやるツール
+brew "mosh"          # 不安定な回線でもセッションが落ちない、遅延に強いリモート接続ツール
 
 cask "adoptopenjdk"
 cask "google-chrome"

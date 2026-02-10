@@ -60,3 +60,7 @@ $ brew bundle cleanup
 # 削除
 $ brew uninstall vim
 ```
+
+## App Store
+
+- Amphetamine
