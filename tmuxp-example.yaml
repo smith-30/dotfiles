@@ -3,9 +3,11 @@
 session_name: tmuxp-example
 
 windows:
-  - window_name: frontend
+  - window_name: workspace
+    layout: tiled
     panes:
-      - echo frontend
-  - window_name: backend
-    panes:
-      - echo backend
+      - shell_command:
+          - echo frontend
+      - shell_command:
+          - echo backend
+      - shell_command: nvim
