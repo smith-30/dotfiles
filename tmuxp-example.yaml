@@ -1,0 +1,11 @@
+# set ~/.tmuxp/tmuxp-example.yaml
+# tmuxp load tmuxp-example
+session_name: tmuxp-example
+
+windows:
+  - window_name: frontend
+    panes:
+      - echo frontend
+  - window_name: backend
+    panes:
+      - echo backend
