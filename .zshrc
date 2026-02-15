@@ -1,3 +1,23 @@
+autoload -Uz compinit
+compinit
+
+alias ta='(){
+if [[ -z "$1" ]]; then
+  echo "Use: ta <session_name>"
+  return 1
+fi
+tmux attach -t "$1" 2>/dev/null || tmux new -s "$1"
+}'
+
+# 'ta' のオートコンプリート
+_ta_complete() {
+  local -a sessions
+  sessions=("${(@f)$(tmux list-sessions -F '#{session_name}' 2>/dev/null)}")
+  _describe 'sessions' sessions
+}
+
+compdef _ta_complete ta
+
 ### Paths / env ###############################################################
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
@@ -125,3 +145,9 @@ bindkey '^K' fkill-widget
 ### Options ###################################################################
 setopt rm_star_wait  # rm * の前に確認
 setopt extended_glob # 高機能glob有効化
+
+# This automatically launches tmux whenever you SSH in (but not when you're already in tmux or using a local terminal).
+
+if [[ -n "$SSH_CONNECTION" ]] && [[ -z "$TMUX" ]]; then
+    tmux attach -t ai 2>/dev/null || tmux new -s ai
+fi
