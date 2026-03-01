@@ -22,7 +22,21 @@ setup:
 	mkdir -p ~/.config/git && cp gitignore_global ~/.config/git/ignore
 	git config --global ghq.root ~/go/src
 	cd && git clone git@github.com:b4b4r07/enhancd.git 2>/dev/null || true
-	source ~/.zshrc; nvm install --lts --default
+	zsh -i -c "nvm install --lts --default"
 	npm install -g opencommit
 	oco config set OCO_EMOJI=true
 	oco config set OCO_LANGUAGE=ja
+	# secretlint: global install
+	npm install -g secretlint @secretlint/secretlint-rule-preset-recommend
+	# secretlint: global config
+	cp .secretlintrc.json ~/.secretlintrc.json
+	# git-secrets hook を設置してから secretlint combined hook で上書き
+	git secrets --install ~/.git-templates/git-secrets
+	git config --global init.templatedir ~/.git-templates/git-secrets
+	git secrets --register-aws
+	cp hooks/pre-commit ~/.git-templates/git-secrets/hooks/pre-commit
+	chmod +x ~/.git-templates/git-secrets/hooks/pre-commit
+	# dotfiles リポジトリ自体にも hook を適用
+	mkdir -p .git/hooks
+	cp hooks/pre-commit .git/hooks/pre-commit
+	chmod +x .git/hooks/pre-commit

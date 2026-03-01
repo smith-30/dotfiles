@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# git-secrets check
+git secrets --pre_commit_hook -- "$@"
+
+# secretlint check on staged files
+staged=$(git diff --cached --name-only --diff-filter=ACM 2>/dev/null)
+if [ -n "$staged" ] && command -v secretlint >/dev/null 2>&1; then
+  echo "$staged" | tr '\n' '\0' | xargs -0 secretlint --secretlintrc ~/.secretlintrc.json
+fi
