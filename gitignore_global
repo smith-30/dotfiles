@@ -1,0 +1,43 @@
+**/.claude/settings.local.json
+
+# Environment variables
+.env
+.env.*
+.envrc
+
+# Private keys / Certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+*.jks
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.pub
+
+# Credentials / Tokens
+*.credentials
+credentials.json
+credentials.csv
+auth.json
+*.token
+.netrc
+
+# AWS
+.aws/credentials
+
+# GCP / Firebase
+serviceAccountKey.json
+google-services.json
+GoogleService-Info.plist
+
+# Secrets
+secrets.*
+secret.*
+*_secret
+*_secrets
+config/secrets.yml
+config/master.key
