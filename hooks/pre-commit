@@ -1,9 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
 # git-secrets check
-git secrets --pre_commit_hook -- "$@"
+git secrets --pre_commit_hook -- "$@" || exit 1
 
 # secretlint check on staged files
-staged=$(git diff --cached --name-only --diff-filter=ACM 2>/dev/null)
-if [ -n "$staged" ] && command -v secretlint >/dev/null 2>&1; then
-  echo "$staged" | tr '\n' '\0' | xargs -0 secretlint --secretlintrc ~/.secretlintrc.json
-fi
+FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g')
+[ -z "$FILES" ] && exit 0
+
+echo "$FILES" | xargs secretlint --secretlintrc ~/.secretlintrc.json
