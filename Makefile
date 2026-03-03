@@ -7,6 +7,10 @@ all: install setup
 install:
 	brew bundle
 
+# NOTE: This changes the registry for the current user (updates ~/.npmrc). 
+# It may affect other projects. https://github.com/flatt-security/setup-takumi-guard-npm
+# npm config set registry https://npm.flatt.tech/ --location=user
+
 # dotfiles の展開（日常的な更新にも使う）
 setup:
 	cp .zshrc ~/.zshrc
@@ -23,6 +27,7 @@ setup:
 	git config --global ghq.root ~/go/src
 	cd && git clone git@github.com:b4b4r07/enhancd.git 2>/dev/null || true
 	zsh -i -c "nvm install --lts --default"
+	npm config set registry https://npm.flatt.tech/ --location=user
 	npm install -g opencommit
 	oco config set OCO_EMOJI=true
 	oco config set OCO_LANGUAGE=ja
