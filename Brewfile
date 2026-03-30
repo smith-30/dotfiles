@@ -9,7 +9,6 @@ brew 'openssl'
 brew 'mas'
 brew "automake"
 brew "awscli", link: false
-brew "bazaar"
 brew "glib"
 brew "p11-kit"
 brew "unbound"
@@ -67,9 +66,8 @@ brew "git-chglog/git-chglog/git-chglog"
 brew "leiningen"
 brew "lazygit"        # Git操作をTUIで快適にする
 brew "lazydocker"    # Docker / docker-compose をTUIで操作
-brew "lazynpm"       # npm/yarn/pnpm のスクリプト・依存をTUIで管理
 brew "tmuxp"         # tmux セッションをYAMLで定義・自動起動
-brew "ghostty"       # 高速・GPU描画対応の次世代ターミナル
+brew "gh-ost"       # 高速・GPU描画対応の次世代ターミナル
 brew "sk"            # skim: fzf互換の高速ファジーファインダ
 brew "fzf"           # ファジーファインダ（定番）
 brew "zoxide"        # cd を賢くするディレクトリジャンプツール
@@ -78,22 +76,14 @@ brew "tailscale"     # インターネット越しに、どこでも安全に“
 brew "mise"          # 開発言語やツールのバージョン管理をまとめてやるツール
 brew "mosh"          # 不安定な回線でもセッションが落ちない、遅延に強いリモート接続ツール
 
-cask "adoptopenjdk"
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "karabiner-elements"
 cask "ngrok"
-cask "packetproxy"
-cask "postman"
-cask "skitch"
 cask "slack"
 cask 'zoom'
 cask 'obsidian'
-cask 'drawio'
 cask 'visual-studio-code'
-cask 'asana'
-cask 'figma'
-cask 'rectangle'
 cask 'discord'
 cask 'orbstack'
 cask 'tomatobar'
