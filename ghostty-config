@@ -49,5 +49,5 @@ window-inherit-working-directory = true
 # detect は zsh / bash / fish などを自動判別
 shell-integration = detect
 
-# タブを再起動後に復元する
+# タブを再起動後に復元する(update時などはCmd+Qで終了させるのが無難)
 window-save-state = always
