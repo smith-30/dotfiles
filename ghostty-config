@@ -1,0 +1,53 @@
+# 使用するカラーテーマを指定
+# Tokyo Night 系の配色で、暗め＆コントラスト高め
+theme = TokyoNight
+
+# 起動時にウィンドウを最大化する
+maximize = true
+
+# 使用するフォントを指定
+# 日本語対応・等幅・Nerd Font入りで開発向け
+font-family = PlemolJP35 Console NF
+
+# 背景の不透明度（1.0 が完全不透明）
+# 0.8 にすると少し透ける
+background-opacity = 0.8
+
+# macOS のタイトルバーのスタイル
+# tabs にするとタブ風の見た目になる
+macos-titlebar-style = tabs
+
+# 背景にブラー（すりガラス効果）をかける
+# macOS 専用
+background-blur = true
+
+# フォントサイズ（pt）
+font-size = 20
+
+# セル（1行）の高さを微調整
+# 数値を上げると行間が広がる
+adjust-cell-height = 2
+
+# フォントを少し太く描画する
+# 細すぎるフォントの視認性改善に有効
+font-thicken = true
+
+# キーバインド設定
+# Ctrl + h で左の分割ペインへ移動
+keybind = ctrl+h=goto_split:left
+
+keybind = shift+enter=text:\n
+
+# Ctrl + l で右の分割ペインへ移動
+keybind = ctrl+l=goto_split:right
+
+# 新しいウィンドウ／タブを開いたときに
+# 現在の作業ディレクトリを引き継ぐ
+window-inherit-working-directory = true
+
+# シェル統合機能の設定
+# detect は zsh / bash / fish などを自動判別
+shell-integration = detect
+
+# タブを再起動後に復元する
+window-save-state = always

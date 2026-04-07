@@ -38,6 +38,7 @@ brew update && brew upgrade
 | `.czrc` / `.cz-config.js` | Commitizen configuration for conventional commits |
 | `tmuxp-example.yaml` | Example tmuxp session layout (copy to `~/.tmuxp/` to use) |
 | `karabiner.json` | Karabiner-Elements key remapping config |
+| `ghostty-config` | Ghostty terminal emulator config (deployed to `~/.config/ghostty/config`) |
 
 ## Key Tools in the Stack
 
