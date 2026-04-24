@@ -71,6 +71,12 @@ $ brew bundle cleanup
 
 # 削除
 $ brew uninstall vim
+
+# 現在の設定を dump
+$ brew bundle dump \
+    --file="Brewfile.generated" \
+    --force \
+    --describe
 ```
 
 ## App Store

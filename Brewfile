@@ -5,6 +5,7 @@ tap "git-chglog/git-chglog"
 tap "homebrew/bundle"
 tap "homebrew/cask-versions"
 tap "sqldef/sqldef"
+tap "roborev-dev/tap"
 brew 'openssl'
 brew 'mas'
 brew "automake"
@@ -76,6 +77,8 @@ brew "csvlens"       # CSVをTUIで可視化・閲覧
 brew "tailscale"     # インターネット越しに、どこでも安全に“自分のLAN”を作るツール
 brew "mise"          # 開発言語やツールのバージョン管理をまとめてやるツール
 brew "mosh"          # 不安定な回線でもセッションが落ちない、遅延に強いリモート接続ツール
+# Automatic code review daemon for git commits using AI agents
+brew "roborev-dev/tap/roborev"
 
 cask "google-chrome"
 cask "google-japanese-ime"
