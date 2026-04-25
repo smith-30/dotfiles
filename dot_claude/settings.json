@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "defaultMode": "auto",
+    "allow": [
+      "Read",
+      "Edit",
+      "Write",
+      "MultiEdit",
+      "Glob",
+      "Grep",
+      "LS",
+      "TodoWrite",
+      "WebFetch",
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git show*)",
+      "Bash(git branch*)",
+      "Bash(git checkout*)",
+      "Bash(git switch*)",
+      "Bash(git add*)",
+      "Bash(git commit*)",
+      "Bash(gh pr view*)",
+      "Bash(gh pr diff*)",
+      "Bash(gh pr status*)",
+      "Bash(gh pr list*)",
+      "Bash(gh issue view*)",
+      "Bash(gh issue list*)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(pnpm *)",
+      "Bash(yarn *)",
+      "Bash(corepack *)",
+      "Bash(node *)",
+      "Bash(tsc *)",
+      "Bash(vite *)",
+      "Bash(vitest *)",
+      "Bash(jest *)",
+      "Bash(playwright *)",
+      "Bash(composer *)",
+      "Bash(vendor/bin/*)",
+      "Bash(php *)",
+      "Bash(clojure *)",
+      "Bash(clj *)",
+      "Bash(java *)",
+      "Bash(mvn *)",
+      "Bash(./mvnw *)",
+      "Bash(gradle *)",
+      "Bash(./gradlew *)",
+      "Bash(docker compose *)",
+      "Bash(docker ps*)",
+      "Bash(docker logs*)",
+      "Bash(docker exec*)",
+      "Bash(make *)",
+      "Bash(jq *)",
+      "Bash(rg *)",
+      "Bash(fd *)",
+      "Bash(find *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(sed *)",
+      "Bash(awk *)",
+      "Bash(grep *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(touch *)"
+    ],
+    "ask": [
+      "Bash(git push*)",
+      "Bash(gh pr create*)",
+      "Bash(gh pr merge*)",
+      "Bash(gh pr close*)",
+      "Bash(gh release*)",
+      "Bash(docker compose down*)",
+      "Bash(docker rm*)",
+      "Bash(docker rmi*)",
+      "Bash(docker system prune*)",
+      "Bash(kubectl *)",
+      "Bash(aws *)",
+      "Bash(terraform apply*)",
+      "Bash(terraform destroy*)",
+      "Bash(cdk deploy*)",
+      "Bash(cdk destroy*)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./config/credentials*)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/credentials)",
+      "Read(~/.config/gh/hosts.yml)",
+      "Bash(rm -rf / *)",
+      "Bash(rm -rf ~/*)",
+      "Bash(sudo *)",
+      "Bash(chmod 777*)",
+      "Bash(chown *)",
+      "Bash(curl * | sh*)",
+      "Bash(wget * | sh*)"
+    ]
+  },
+  "autoMode": {
+    "allow": [
+      "$defaults",
+      "Allow normal development tasks such as reading, editing, searching, formatting, linting, testing, type checking, dependency installation, and local Docker Compose inspection when they are relevant to the user's request."
+    ],
+    "soft_deny": [
+      "$defaults",
+      "Ask before pushing to remote repositories, opening or merging pull requests, deleting branches, running production-impacting infrastructure commands, deleting Docker volumes/images, or changing credentials and secret files."
+    ]
+  },
+  "enabledPlugins": {
+    "github@claude-plugins-official": true,
+    "code-simplifier@claude-plugins-official": true,
+    "frontend-design@claude-plugins-official": true,
+    "superpowers@superpowers-marketplace": true,
+    "episodic-memory@superpowers-marketplace": true,
+    "superpowers-developing-for-claude-code@superpowers-marketplace": true
+  },
+  "extraKnownMarketplaces": {
+    "openai-codex": {
+      "source": {
+        "source": "github",
+        "repo": "openai/codex-plugin-cc"
+      }
+    },
+    "superpowers-marketplace": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers-marketplace"
+      }
+    }
+  },
+  "language": "日本語",
+  "skipDangerousModePermissionPrompt": true,
+  "skipAutoPermissionPrompt": true
+}
