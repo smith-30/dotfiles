@@ -31,9 +31,7 @@ Host github github.com
 
 ```bash
 git config --global user.name "smith-30" && \
-git config --global user.email smith-30@example.com && \
-git secrets --install ~/.git-templates/git-secrets && \
-git config --global init.templatedir '~/.git-templates/git-secrets'
+git config --global user.email smith-30@example.com
 ```
 
 ### 4. dotfiles をクローンしてセットアップ

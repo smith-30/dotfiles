@@ -1,8 +1,5 @@
 #!/bin/sh
 
-# git-secrets check
-git secrets --pre_commit_hook -- "$@" || exit 1
-
 # secretlint check on staged files
 FILES=$(git diff --cached --name-only --diff-filter=ACMR | sed 's| |\\ |g')
 [ -z "$FILES" ] && exit 0

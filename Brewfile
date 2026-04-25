@@ -31,7 +31,6 @@ brew "gdk-pixbuf"
 brew "gh"
 brew "ghq"
 brew "git"
-brew "git-secrets"
 brew "go"
 brew "gobject-introspection"
 brew "gts"
@@ -79,6 +78,8 @@ brew "mise"          # 開発言語やツールのバージョン管理をまと
 brew "mosh"          # 不安定な回線でもセッションが落ちない、遅延に強いリモート接続ツール
 # Automatic code review daemon for git commits using AI agents
 brew "roborev-dev/tap/roborev"
+# Fast Git hook manager written in Rust, drop-in alternative to pre-commit
+brew "prek"
 
 cask "google-chrome"
 cask "google-japanese-ime"

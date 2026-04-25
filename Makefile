@@ -36,12 +36,11 @@ setup:
 	npm install -g secretlint @secretlint/secretlint-rule-preset-recommend
 	# secretlint: global config
 	cp .secretlintrc.json ~/.secretlintrc.json
-	# git-secrets hook を設置してから secretlint combined hook で上書き
-	git secrets --install ~/.git-templates/git-secrets
-	git config --global init.templatedir ~/.git-templates/git-secrets
-	git secrets --register-aws
-	cp hooks/pre-commit ~/.git-templates/git-secrets/hooks/pre-commit
-	chmod +x ~/.git-templates/git-secrets/hooks/pre-commit
+	# git template dir に secretlint hook を配置
+	mkdir -p ~/.git-templates/default/hooks
+	git config --global init.templatedir ~/.git-templates/default
+	cp hooks/pre-commit ~/.git-templates/default/hooks/pre-commit
+	chmod +x ~/.git-templates/default/hooks/pre-commit
 	# dotfiles リポジトリ自体にも hook を適用
 	mkdir -p .git/hooks
 	cp hooks/pre-commit .git/hooks/pre-commit
