@@ -1,0 +1,10 @@
+name: dotfiles
+version: 1.0.0
+description: APM project for dotfiles
+author: smith-30
+dependencies:
+  apm:
+  - mizchi/skills/empirical-prompt-tuning
+  - ast-grep/agent-skill/ast-grep
+  mcp: []
+scripts: {}
