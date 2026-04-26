@@ -6,6 +6,7 @@ tap "homebrew/bundle"
 tap "homebrew/cask-versions"
 tap "sqldef/sqldef"
 tap "roborev-dev/tap"
+tap "microsoft/apm"
 brew 'openssl'
 brew 'mas'
 brew "automake"
@@ -80,6 +81,8 @@ brew "mosh"          # 不安定な回線でもセッションが落ちない、
 brew "roborev-dev/tap/roborev"
 # Fast Git hook manager written in Rust, drop-in alternative to pre-commit
 brew "prek"
+# AI agent dependency manager (package.json for AI agents)
+brew "microsoft/apm/apm"
 
 cask "google-chrome"
 cask "google-japanese-ime"
