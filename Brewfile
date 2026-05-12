@@ -69,7 +69,7 @@ brew "leiningen"
 brew "lazygit"        # Git操作をTUIで快適にする
 brew "lazydocker"    # Docker / docker-compose をTUIで操作
 brew "tmuxp"         # tmux セッションをYAMLで定義・自動起動
-brew "gh-ost"       # 高速・GPU描画対応の次世代ターミナル
+brew "ghostty"       # 高速・GPU描画対応の次世代ターミナル
 brew "sk"            # skim: fzf互換の高速ファジーファインダ
 brew "fzf"           # ファジーファインダ（定番）
 brew "zoxide"        # cd を賢くするディレクトリジャンプツール
