@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest",
+        "--headless",
+        "--no-usage-statistics",
+        "--isolated",
+        "--experimentalScreencast=true",
+        "--experimentalFfmpegPath=/opt/homebrew/bin/ffmpeg",
+        "--usageStatistics=false",
+        "--categoryPerformance=false",
+        "--categoryNetwork=false",
+        "--categoryEmulation=false"]
+    }
+  }
+}
