@@ -1,5 +1,7 @@
 ## dotfiles
 
+macOS dotfiles managed with [chezmoi](https://www.chezmoi.io/).
+
 ## init
 
 ### 1. Homebrew をインストール
@@ -18,7 +20,7 @@ chmod 400 ~/.ssh/my-github-id_rsa
 
 `~/.ssh/config` に追記：
 
-```
+```sshconfig
 Host github github.com
     HostName github.com
     IdentityFile ~/.ssh/my-github-id_rsa
@@ -42,17 +44,53 @@ git clone git@github.com:smith-30/dotfiles.git && \
 cd dotfiles && make all
 ```
 
-`make all` で brew bundle（全パッケージインストール）と dotfiles 展開を一括実行。
+`make all` で Homebrew パッケージのインストール、初期セットアップ、chezmoi による dotfiles 展開を一括実行する。
 
----
+## Structure
+
+```text
+dot_zshrc                         # ~/.zshrc
+dot_tmux.conf                     # ~/.tmux.conf
+dot_vimrc                         # ~/.vimrc
+dot_gvimrc                        # ~/.gvimrc
+dot_czrc                          # ~/.czrc
+dot_cz-config.js                  # ~/.cz-config.js
+dot_git-completion.bash           # ~/.git-completion.bash
+dot_git-prompt.sh                 # ~/.git-prompt.sh
+dot_secretlintrc.json             # ~/.secretlintrc.json
+dot_config/git/ignore             # ~/.config/git/ignore
+dot_config/ghostty/config         # ~/.config/ghostty/config
+dot_config/karabiner/karabiner.json # ~/.config/karabiner/karabiner.json
+dot_tmuxp/tmuxp-example.yaml      # ~/.tmuxp/tmuxp-example.yaml
+dot_claude/                       # ~/.claude/
+dot_vscode/                       # ~/.vscode/
+```
 
 ## make コマンド
 
 | コマンド | 内容 |
 |---------|------|
-| `make all` | `brew bundle` + dotfiles 展開（新規セットアップ用）|
+| `make all` | `brew bundle` + 初期セットアップ + chezmoi 展開（新規セットアップ用）|
 | `make install` | `brew bundle` のみ（Brewfile 更新時）|
-| `make setup` | dotfiles 展開のみ（日常的な更新時）|
+| `make bootstrap` | global git/npm 設定、nvm、npm global tools、git hook 設定 |
+| `make setup` | `chezmoi apply` で dotfiles を展開 |
+| `make diff` | `chezmoi diff` で展開前の差分確認 |
+| `make dry-run` | `chezmoi apply --dry-run --verbose` で展開内容を確認 |
+
+## chezmoi
+
+```bash
+# 差分確認
+make diff
+
+# 実際には書き込まずに確認
+make dry-run
+
+# dotfiles 展開
+make setup
+```
+
+このリポジトリの root を chezmoi source directory として扱う。`README.md` や `Makefile` など、ホームディレクトリへ展開しないファイルは `.chezmoiignore` で除外する。
 
 ## brew 周り
 

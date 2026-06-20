@@ -1,7 +1,10 @@
-.PHONY: all install setup
+CHEZMOI ?= chezmoi
+CHEZMOI_SOURCE := $(CURDIR)
 
-# 新規Mac向け: brew bundle → dotfiles 展開を一括実行
-all: install setup
+.PHONY: all install bootstrap setup diff dry-run
+
+# 新規Mac向け: brew bundle → 初期セットアップ → dotfiles 展開を一括実行
+all: install bootstrap setup
 
 # パッケージ一括インストール（初回または Brewfile 更新時）
 install:
@@ -11,20 +14,8 @@ install:
 # It may affect other projects. https://github.com/flatt-security/setup-takumi-guard-npm
 # npm config set registry https://npm.flatt.tech/ --location=user
 
-# dotfiles の展開（日常的な更新にも使う）
-setup:
-	cp .zshrc ~/.zshrc
-	cp .czrc ~/.czrc
-	cp .cz-config.js ~/.cz-config.js
-	cp .git-completion.bash ~/.git-completion.bash
-	cp .git-prompt.sh ~/.git-prompt.sh
-	cp .vimrc ~/.vimrc
-	cp .gvimrc ~/.gvimrc
-	cp .tmux.conf ~/.tmux.conf
-	mkdir -p ~/.config/karabiner && cp karabiner.json ~/.config/karabiner/karabiner.json
-	mkdir -p ~/.tmuxp && cp tmuxp-example.yaml ~/.tmuxp/tmuxp-example.yaml
-	mkdir -p ~/.config/git && cp gitignore_global ~/.config/git/ignore
-	mkdir -p ~/.config/ghostty && cp ghostty-config ~/.config/ghostty/config
+# 初回または明示的に必要なときだけ実行するグローバル設定
+bootstrap:
 	git config --global ghq.root ~/go/src
 	cd && git clone git@github.com:b4b4r07/enhancd.git 2>/dev/null || true
 	zsh -i -c "nvm install --lts --default"
@@ -34,14 +25,22 @@ setup:
 	oco config set OCO_LANGUAGE=ja
 	# secretlint: global install
 	npm install -g secretlint @secretlint/secretlint-rule-preset-recommend
-	# secretlint: global config
-	cp .secretlintrc.json ~/.secretlintrc.json
 	# git template dir に secretlint hook を配置
 	mkdir -p ~/.git-templates/default/hooks
 	git config --global init.templatedir ~/.git-templates/default
-	cp hooks/pre-commit ~/.git-templates/default/hooks/pre-commit
-	chmod +x ~/.git-templates/default/hooks/pre-commit
+	install -m 0755 hooks/pre-commit ~/.git-templates/default/hooks/pre-commit
 	# dotfiles リポジトリ自体にも hook を適用
 	mkdir -p .git/hooks
-	cp hooks/pre-commit .git/hooks/pre-commit
-	chmod +x .git/hooks/pre-commit
+	install -m 0755 hooks/pre-commit .git/hooks/pre-commit
+
+# dotfiles の展開（日常的な更新にも使う）
+setup:
+	$(CHEZMOI) apply --source "$(CHEZMOI_SOURCE)"
+
+# 展開前に差分を確認する
+diff:
+	$(CHEZMOI) diff --source "$(CHEZMOI_SOURCE)"
+
+# 実際には書き込まずに展開内容を確認する
+dry-run:
+	$(CHEZMOI) apply --source "$(CHEZMOI_SOURCE)" --dry-run --verbose

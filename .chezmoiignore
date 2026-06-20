@@ -1,0 +1,16 @@
+.DS_Store
+.claude/settings.local.json
+.env.example
+.git/**
+.gitignore
+.chezmoiignore
+
+Brewfile
+Brewfile.generated
+CLAUDE.md
+Makefile
+README.md
+apm.lock.yaml
+apm.yml
+apm_modules/**
+hooks/**
