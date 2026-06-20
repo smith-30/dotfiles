@@ -1,0 +1,8 @@
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "secretlint"
+name = "secretlint"
+language = "system"
+entry = "secretlint --secretlintrc .secretlintrc.json"

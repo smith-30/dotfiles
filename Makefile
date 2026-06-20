@@ -29,9 +29,8 @@ bootstrap:
 	mkdir -p ~/.git-templates/default/hooks
 	git config --global init.templatedir ~/.git-templates/default
 	install -m 0755 hooks/pre-commit ~/.git-templates/default/hooks/pre-commit
-	# dotfiles リポジトリ自体にも hook を適用
-	mkdir -p .git/hooks
-	install -m 0755 hooks/pre-commit .git/hooks/pre-commit
+	# dotfiles リポジトリ自体にも hook を適用 (prek で管理)
+	prek install
 
 # dotfiles の展開（日常的な更新にも使う）
 setup:
