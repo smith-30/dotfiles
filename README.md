@@ -58,6 +58,8 @@ dot_cz-config.js                  # ~/.cz-config.js
 dot_git-completion.bash           # ~/.git-completion.bash
 dot_git-prompt.sh                 # ~/.git-prompt.sh
 dot_secretlintrc.json             # ~/.secretlintrc.json
+.secretlintrc.json                # リポジトリ用 secretlint 設定（prek hook から参照）
+prek.toml                         # prek Git hook 設定
 dot_config/git/ignore             # ~/.config/git/ignore
 dot_config/ghostty/config         # ~/.config/ghostty/config
 dot_config/karabiner/karabiner.json # ~/.config/karabiner/karabiner.json
@@ -72,10 +74,31 @@ dot_vscode/                       # ~/.vscode/
 |---------|------|
 | `make all` | `brew bundle` + 初期セットアップ + chezmoi 展開（新規セットアップ用）|
 | `make install` | `brew bundle` のみ（Brewfile 更新時）|
-| `make bootstrap` | global git/npm 設定、nvm、npm global tools、git hook 設定 |
+| `make bootstrap` | global git/npm 設定、nvm、npm global tools、git hook 設定、prek install |
 | `make setup` | `chezmoi apply` で dotfiles を展開 |
 | `make diff` | `chezmoi diff` で展開前の差分確認 |
 | `make dry-run` | `chezmoi apply --dry-run --verbose` で展開内容を確認 |
+
+## Git hooks (prek)
+
+[prek](https://github.com/j178/prek) で Git hook を管理する。設定は `prek.toml` に定義されており、コミット時に secretlint が実行される。
+
+```bash
+# hook のインストール（make bootstrap で自動実行される）
+prek install
+
+# 全ファイルに対して手動実行
+prek run --all-files
+
+# hook のアンインストール
+prek uninstall
+```
+
+### 設定済み hook
+
+| hook | タイミング | 内容 |
+|------|-----------|------|
+| secretlint | pre-commit | シークレット・APIキーの漏洩チェック |
 
 ## chezmoi
 
