@@ -130,7 +130,7 @@
     ],
     "soft_deny": [
       "$defaults",
-      "Ask before pushing to remote repositories, opening or merging pull requests, deleting branches, running production-impacting infrastructure commands, deleting Docker volumes/images, or changing credentials and secret files."
+      "Ask before deleting branches, running production-impacting infrastructure commands, deleting Docker volumes/images, or changing credentials and secret files."
     ]
   },
   "enabledPlugins": {
