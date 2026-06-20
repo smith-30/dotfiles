@@ -157,5 +157,9 @@
   },
   "language": "日本語",
   "skipDangerousModePermissionPrompt": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "statusLine": {
+    "type": "command",
+    "command": "npx ccstatusline@latest"
+  }
 }
