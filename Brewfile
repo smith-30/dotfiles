@@ -96,6 +96,7 @@ cask 'visual-studio-code'
 cask 'discord'
 cask 'orbstack'
 cask 'tomatobar'
+cask 'cmux'          # Ghostty ベースのターミナル（縦タブ・AI エージェント通知対応）
 
 mas 'Xcode', id: 497799835
 mas 'Kindle', id: 302584613
