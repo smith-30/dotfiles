@@ -7,3 +7,4 @@ Brewfile.generated
 
 # APM dependencies
 apm_modules/
+tmp/

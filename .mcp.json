@@ -12,6 +12,12 @@
         "--categoryPerformance=false",
         "--categoryNetwork=false",
         "--categoryEmulation=false"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest", "--isolated"
+      ]
     }
   }
 }
